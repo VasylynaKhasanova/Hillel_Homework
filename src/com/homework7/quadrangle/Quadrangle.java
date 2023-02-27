@@ -10,6 +10,23 @@ public abstract class Quadrangle extends Figure {
     private double firstDiagonal;
     private double secondDiagonal;
 
+    public Quadrangle(double firstWidth, double secondWidth, double firstLength, double secondLength) {
+        this.firstWidth = firstWidth;
+        this.secondWidth = secondWidth;
+        this.firstLength = firstLength;
+        this.secondLength = secondLength;
+    }
+
+    public Quadrangle(double firstWidth, double secondWidth, double firstLength, double secondLength, double firstDiagonal,
+                      double secondDiagonal) {
+        this.firstWidth = firstWidth;
+        this.secondWidth = secondWidth;
+        this.firstLength = firstLength;
+        this.secondLength = secondLength;
+        this.firstDiagonal = firstDiagonal;
+        this.secondDiagonal = secondDiagonal;
+    }
+
     @Override
     public double perimeter() {
         return this.getFirstWidth() + this.getSecondWidth() + this.getFirstLength() + this.getSecondLength();
@@ -47,20 +64,4 @@ public abstract class Quadrangle extends Figure {
         this.secondDiagonal = secondDiagonal;
     }
 
-    public Quadrangle(double firstWidth, double secondWidth, double firstLength, double secondLength) {
-        this.firstWidth = firstWidth;
-        this.secondWidth = secondWidth;
-        this.firstLength = firstLength;
-        this.secondLength = secondLength;
-    }
-
-    public Quadrangle(double firstWidth, double secondWidth, double firstLength, double secondLength, double firstDiagonal,
-                      double secondDiagonal) {
-        this.firstWidth = firstWidth;
-        this.secondWidth = secondWidth;
-        this.firstLength = firstLength;
-        this.secondLength = secondLength;
-        this.firstDiagonal = firstDiagonal;
-        this.secondDiagonal = secondDiagonal;
-    }
 }

@@ -7,6 +7,12 @@ public class Triangle extends Figure {
     private final double secondSide;
     private final double thirdSide;
 
+    public Triangle(double firstSide, double secondSide, double thirdSide) {
+        this.firstSide = firstSide;
+        this.secondSide = secondSide;
+        this.thirdSide = thirdSide;
+    }
+
     @Override
     public double perimeter() {
         return this.firstSide + this.secondSide + this.thirdSide;
@@ -27,12 +33,6 @@ public class Triangle extends Figure {
 
     public double getThirdSide() {
         return thirdSide;
-    }
-
-    public Triangle(double firstSide, double secondSide, double thirdSide) {
-        this.firstSide = firstSide;
-        this.secondSide = secondSide;
-        this.thirdSide = thirdSide;
     }
 
 }
