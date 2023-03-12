@@ -1,22 +1,28 @@
 package com.homework10;
 
 import com.homework10.foodProducts.FoodProducts;
+import com.homework10.foodProducts.bakeryProducts.BakeryProducts;
 import com.homework10.foodProducts.bakeryProducts.Bread;
 import com.homework10.foodProducts.bakeryProducts.Croissant;
 import com.homework10.foodProducts.bakeryProducts.Pita;
 import com.homework10.foodProducts.diaryProducts.Cheese;
+import com.homework10.foodProducts.diaryProducts.DiaryProducts;
 import com.homework10.foodProducts.diaryProducts.Milk;
 import com.homework10.foodProducts.diaryProducts.Yogurt;
 import com.homework10.foodProducts.сereals.Buckwheat;
+import com.homework10.foodProducts.сereals.Cereals;
 import com.homework10.foodProducts.сereals.Oatmeal;
 import com.homework10.foodProducts.сereals.Rice;
 import com.homework10.nonFoodProducts.NonFoodProducts;
 import com.homework10.nonFoodProducts.decor.Candle;
+import com.homework10.nonFoodProducts.decor.Decor;
 import com.homework10.nonFoodProducts.decor.Painting;
 import com.homework10.nonFoodProducts.decor.Vase;
+import com.homework10.nonFoodProducts.householdAppliance.HouseholdAppliances;
 import com.homework10.nonFoodProducts.householdAppliance.Microwave;
 import com.homework10.nonFoodProducts.householdAppliance.Refrigerator;
 import com.homework10.nonFoodProducts.householdAppliance.WashingMachine;
+import com.homework10.nonFoodProducts.officeItems.OfficeItems;
 import com.homework10.nonFoodProducts.officeItems.Pen;
 import com.homework10.nonFoodProducts.officeItems.Pencil;
 import com.homework10.nonFoodProducts.officeItems.Stapler;
@@ -287,6 +293,12 @@ public class MainClass {
         System.out.println("The factory produced " + ProductFactory.nonFoodProductsCount + " non-food products.");
         System.out.println("In general produced " + FoodProducts.countFoodProducts + " food products.");
         System.out.println("In general produced " + NonFoodProducts.countNonFoodProducts + " non-food products.");
+        System.out.println("In general produced " + BakeryProducts.bakeryProductsCount + " bakery products.");
+        System.out.println("In general produced " + DiaryProducts.diaryProductsCount + " diary products.");
+        System.out.println("In general produced " + Cereals.cerealsCount + " cereals products.");
+        System.out.println("In general produced " + Decor.decorCount + " decor products.");
+        System.out.println("In general produced " + HouseholdAppliances.householdAppliancesCount + " household appliance products.");
+        System.out.println("In general produced " + OfficeItems.officeItemsCount + " office items products.");
     }
 
 }

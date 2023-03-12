@@ -5,9 +5,12 @@ import com.homework10.foodProducts.FoodProducts;
 import java.time.LocalDateTime;
 
 public abstract class Cereals extends FoodProducts {
+    public static int cerealsCount = 0;
+
     public Cereals(String type, String productName, String trademark, LocalDateTime productionDate,
                    LocalDateTime expirationDate) {
         super(type, productName, trademark, productionDate, expirationDate);
+        cerealsCount++;
     }
 }
 
