@@ -1,8 +1,6 @@
 package com.homework8.vehicle.landTransport;
 
-import com.homework8.vehicle.Transport;
-
-public class Tractor extends Transport {
+public class Tractor extends LandTransport {
     private final boolean withTrailer;
     private final boolean withPlow;
 

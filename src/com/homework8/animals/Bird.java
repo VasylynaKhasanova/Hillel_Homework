@@ -1,8 +1,10 @@
 package com.homework8.animals;
 
-import com.homework8.animals.Animals;
+import com.homework8.Fly;
+import com.homework8.Move;
+import com.homework8.Swim;
 
-public class Bird extends Animals {
+public class Bird extends Animals implements Fly, Swim, Move {
     private final String infraClass;
     private final boolean isWings;
 
@@ -23,5 +25,20 @@ public class Bird extends Animals {
 
     public String getInfraClass() {
         return infraClass;
+    }
+
+    @Override
+    public void fly() {
+        System.out.println("I am " + getSpecies() + "! I can fly!");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("I am " + getSpecies() + "! I can walk!");
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("I am " + getSpecies() + "! I can swim!");
     }
 }

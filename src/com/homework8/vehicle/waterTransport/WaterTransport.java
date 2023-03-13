@@ -1,8 +1,9 @@
 package com.homework8.vehicle.waterTransport;
 
+import com.homework8.Swim;
 import com.homework8.vehicle.Transport;
 
-public abstract class WaterTransport extends Transport {
+public abstract class WaterTransport extends Transport implements Swim {
     private final boolean withSail;
     private final boolean withAnchor;
 
@@ -31,5 +32,10 @@ public abstract class WaterTransport extends Transport {
 
     public boolean isWithAnchor() {
         return withAnchor;
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("I am " + getVehicleType() + "! I can swim!");
     }
 }

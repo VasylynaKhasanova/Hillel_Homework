@@ -1,8 +1,9 @@
 package com.homework8.vehicle.airMachines;
 
+import com.homework8.Fly;
 import com.homework8.vehicle.Transport;
 
-public abstract class AirMachine extends Transport {
+public abstract class AirMachine extends Transport implements Fly {
     private final double liftHeight;
     private final double hoursInAir;
 
@@ -32,5 +33,12 @@ public abstract class AirMachine extends Transport {
 
     public double getHoursInAir() {
         return hoursInAir;
+    }
+
+    @Override
+    public void fly() {
+        {
+            System.out.println("I am " + getVehicleType() + "! I can fly!");
+        }
     }
 }

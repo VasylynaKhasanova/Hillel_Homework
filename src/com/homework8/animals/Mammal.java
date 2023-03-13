@@ -1,7 +1,9 @@
 package com.homework8.animals;
 
-public class Mammal extends Animals {
-    private boolean isPredator;
+import com.homework8.Move;
+
+public class Mammal extends Animals implements Move {
+    private final boolean isPredator;
 
     public Mammal(String classType, String species, String breed, String type, String environmentOfLiving, double weightInKg,
                   boolean isPredator) {
@@ -11,5 +13,10 @@ public class Mammal extends Animals {
 
     public boolean isPredator() {
         return isPredator;
+    }
+
+    @Override
+    public void move() {
+        System.out.println("I am " + getSpecies() + "! I can walk!");
     }
 }

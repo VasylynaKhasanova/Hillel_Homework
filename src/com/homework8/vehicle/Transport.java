@@ -1,8 +1,6 @@
 package com.homework8.vehicle;
 
-import com.homework8.Action;
-
-public abstract class Transport implements Action {
+public abstract class Transport {
     private final String vehicleType;
     private final String movingWay;
     private final String brand;
@@ -95,23 +93,6 @@ public abstract class Transport implements Action {
 
     public double getLengthInMetres() {
         return lengthInMetres;
-    }
-
-    @Override
-    public void move() {
-        System.out.println("I am " + getVehicleType() + "! I can ride on the road!");
-    }
-
-    @Override
-    public void swim() {
-        System.out.println("I am " + getVehicleType() + "! I can swim!");
-    }
-
-    @Override
-    public void fly() {
-        {
-            System.out.println("I am " + getVehicleType() + "! I can fly!");
-        }
     }
 
 }
