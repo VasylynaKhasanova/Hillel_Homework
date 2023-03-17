@@ -7,8 +7,7 @@ public class LetterCalculation {
 
     public static void main(String[] args) {
         String sentence = Arrays.toString(args);
-        Set<Character> delimiters = new HashSet<>(
-                Arrays.asList(' ', '.', ',', ':', ';', '?', '!', '-', '(', ')', '[', ']'));
+        Set<Character> delimiters = new HashSet<>(Arrays.asList(' ', '.', ',', ':', ';', '?', '!', '-', '(', ')', '[', ']'));
 
         List<Character> letters = new ArrayList<>();
 
