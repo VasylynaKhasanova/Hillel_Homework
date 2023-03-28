@@ -141,7 +141,6 @@ public class MainClass {
         System.out.println("9. Isosceles triangle");
     }
 
-
     private static int getOption() {
         int figureNumber;
         do {
