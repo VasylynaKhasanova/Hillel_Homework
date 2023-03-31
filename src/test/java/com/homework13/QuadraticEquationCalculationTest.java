@@ -7,69 +7,28 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 public class QuadraticEquationCalculationTest {
-
     @Test
-    public void calculateTwoRootsTest() {
-        String expected = "x1 = -2.76393202250021 x2 = -7.23606797749979";
-        QuadraticEquationCalculation calculation = new QuadraticEquationCalculation();
-
-        String actual = calculation.calculateTwoRoots(2, 20, 80);
-
-        Assertions.assertEquals(expected, actual);
+    public void testTwoRootsCalculation() {
+        QuadraticEquationCalculation calculator = new QuadraticEquationCalculation();
+        Root result = calculator.calculateRoots(20, 40, 0);
+        Assertions.assertEquals(2, result.getNumberOfRoots());
+        Assertions.assertEquals(-2.0, result.getRoot1());
+        Assertions.assertEquals(0.0, result.getRoot2());
     }
 
     @Test
-    public void calculateOneRootTest() {
-        double expected = -2;
-        QuadraticEquationCalculation calculation = new QuadraticEquationCalculation();
-
-        double actual = calculation.calculateOneRoot(10, 40);
-
-        Assertions.assertEquals(expected, actual);
+    public void testOneRootCalculation() {
+        QuadraticEquationCalculation calculator = new QuadraticEquationCalculation();
+        Root result = calculator.calculateRoots(20, 40, 20);
+        Assertions.assertEquals(1, result.getNumberOfRoots());
+        Assertions.assertEquals(-1.0, result.getRoot1());
     }
 
     @Test
-    public void testNegativeDiscriminant() {
-        String expectedOutput = "The equation hasn't real roots.";
-
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
-
-        QuadraticEquationCalculation calculation = new QuadraticEquationCalculation();
-        calculation.calculateRoots(1, 2, 3);
-
-        Assertions.assertEquals(expectedOutput, outContent.toString().trim());
-
-        System.setOut(System.out);
+    public void testNoRealRootsCalculation() {
+        QuadraticEquationCalculation calculator = new QuadraticEquationCalculation();
+        Root result = calculator.calculateRoots(1, 1, 1);
+        Assertions.assertEquals(0, result.getNumberOfRoots());
     }
 
-    @Test
-    public void testPositiveDiscriminant() {
-        String expectedOutput = "The equation has two roots:\r\nx1 = -2.76393202250021 x2 = -7.23606797749979";
-
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
-
-        QuadraticEquationCalculation calculation = new QuadraticEquationCalculation();
-        calculation.calculateRoots(2, 20, 40);
-
-        Assertions.assertEquals(expectedOutput, outContent.toString().trim());
-
-        System.setOut(System.out);
-    }
-
-    @Test
-    public void testZeroDiscriminant() {
-        String expectedOutput = "The equation has one root:\r\nx = -5.0";
-
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
-
-        QuadraticEquationCalculation calculation = new QuadraticEquationCalculation();
-        calculation.calculateRoots(1, 10, 25);
-
-        Assertions.assertEquals(expectedOutput, outContent.toString().trim());
-
-        System.setOut(System.out);
-    }
 }

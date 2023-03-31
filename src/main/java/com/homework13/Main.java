@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        QuadraticEquationCalculation calculation = new QuadraticEquationCalculation();
-
         System.out.println("Please, enter coefficients of the quadratic equation:");
 
         System.out.println("a = ");
@@ -24,6 +22,20 @@ public class Main {
         Scanner scanC = new Scanner(System.in);
         double c = scanC.nextDouble();
 
-        calculation.calculateRoots(a, b, c);
+        QuadraticEquationCalculation calculator = new QuadraticEquationCalculation();
+
+        Root roots = calculator.calculateRoots(a, b, c);
+
+        if (roots.getNumberOfRoots() == 0) {
+            System.out.println("The equation hasn't real roots.");
+        } else if (roots.getNumberOfRoots() == 1) {
+            System.out.println("The equation has one root:");
+            System.out.println("x = " + roots.getRoot1());
+        } else if (roots.getNumberOfRoots() == 2) {
+            System.out.println("The equation has two roots:");
+            System.out.println("x1 = " + roots.getRoot1());
+            System.out.println("x2 = " + roots.getRoot2());
+        }
+
     }
 }
