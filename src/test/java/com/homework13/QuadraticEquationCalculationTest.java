@@ -3,9 +3,6 @@ package com.homework13;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
 public class QuadraticEquationCalculationTest {
     @Test
     public void testTwoRootsCalculation() {
