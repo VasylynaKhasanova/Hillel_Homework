@@ -30,13 +30,18 @@ public class FrontEndPage {
         button.click();
     }
 
-    public List<String> getTeachersNames(WebDriver driver) {
-        List<String> teachersNames = new ArrayList<>();
-        List<TeachersCard> teachersCardsList = new ArrayList<>();
+    public List<TeachersCard> getTeacherCards(WebDriver driver) {
+        List<TeachersCard> teacherCardsList = new ArrayList<>();
+        List<WebElement> teachersCards = driver.findElements(By.cssSelector("div.coach-card_content"));
         for (WebElement card : teachersCards) {
-            teachersCardsList.add(PageFactory.initElements(card, TeachersCard.class));
+            teacherCardsList.add(PageFactory.initElements(card, TeachersCard.class));
         }
-        for (TeachersCard teacherCard : teachersCardsList) {
+        return teacherCardsList;
+    }
+
+    public List<String> getTeachersNames(List<TeachersCard> teacherCardsList) {
+        List<String> teachersNames = new ArrayList<>();
+        for (TeachersCard teacherCard : teacherCardsList) {
             teachersNames.add(teacherCard.getTeacherCardName());
         }
         return teachersNames;

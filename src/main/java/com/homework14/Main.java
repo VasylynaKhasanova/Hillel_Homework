@@ -4,6 +4,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -19,7 +21,9 @@ public class Main {
         programingPage.clickOnFrontEndCourse();
         frontEndPage.clickOnButton(driver);
 
-        System.out.println(frontEndPage.getTeachersNames(driver));
+        List<TeachersCard> teacherCards = frontEndPage.getTeacherCards(driver);
+        List<String> teachersNames = frontEndPage.getTeachersNames(teacherCards);
+        System.out.println(teachersNames);
 
     }
 }
