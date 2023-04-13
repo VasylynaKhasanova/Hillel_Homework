@@ -14,14 +14,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FrontEndPage {
-
-    @FindBy(css = "a.coach-card")
-    private List<WebElement> teachersCards;
+    private WebDriver driver;
 
     @FindBy(id = "coachesShowAllButton")
     private WebElement button;
 
-    public void clickOnButton(WebDriver driver) {
+    @FindBy(css = "div.coach-card_content")
+    private List<WebElement> teachersCards;
+
+    public FrontEndPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    public void clickOnButton() {
         String script = "window.scrollBy(0, 2500);";
         ((JavascriptExecutor) driver).executeScript(script);
 
@@ -30,11 +36,10 @@ public class FrontEndPage {
         button.click();
     }
 
-    public List<TeachersCard> getTeacherCards(WebDriver driver) {
+    public List<TeachersCard> getTeacherCards() {
         List<TeachersCard> teacherCardsList = new ArrayList<>();
-        List<WebElement> teachersCards = driver.findElements(By.cssSelector("div.coach-card_content"));
         for (WebElement card : teachersCards) {
-            teacherCardsList.add(PageFactory.initElements(card, TeachersCard.class));
+            teacherCardsList.add(new TeachersCard(driver, card));
         }
         return teacherCardsList;
     }

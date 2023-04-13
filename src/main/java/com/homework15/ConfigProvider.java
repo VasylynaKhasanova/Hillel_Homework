@@ -1,13 +1,13 @@
-package com.homework14;
+package com.homework15;
 
 import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigProvider {
     private static final Properties properties = getProperties();
-    public static final String BASE_URL = properties.getProperty("base.url");
+    public static final String BASE_URL = properties.getProperty("base.testing.url");
 
-    private static Properties getProperties() {
+    private static Properties getProperties()  {
         Properties properties = new Properties();
         try {
             properties.load(ClassLoader.getSystemResourceAsStream("config.properties"));
@@ -22,3 +22,4 @@ public class ConfigProvider {
 
     }
 }
+
