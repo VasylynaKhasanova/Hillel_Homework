@@ -1,6 +1,6 @@
 package com.homework15;
 
-import com.homework14.DriverFactory;
+import com.homework15.DriverFactory;
 import org.openqa.selenium.WebDriver;
 
 import java.util.List;
@@ -25,7 +25,7 @@ public class Main {
         List<String> opportunities = testingPage.getOpportunities(opportunitiesBlocks);
         System.out.println(opportunities);
 
-        testingPage.goToCategory("Програмування");
+        testingPage.goToCategory("Дизайн");
 
         driver.quit();
     }
